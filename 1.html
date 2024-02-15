@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formas con CSS</title>
+<style>
+    .container {
+        display: flex;
+    }
+
+    .shape {
+        width: 100px;
+        height: 100px;
+        margin-right: 20px; /* Espacio entre las formas */
+    }
+
+    .cuadrado-cyan {
+        background-color: cyan;
+        border-radius: 45px;
+    }
+
+    .cuadrado-magenta {
+        background-color: magenta;
+        border-radius: 15px;
+        border-top-left-radius: 45px;
+        border-bottom-right-radius: 45px;
+    }
+
+    .cuadrado-amarillo {
+        background-color: yellow;
+        border-radius: 15px;
+        border-top-right-radius: 45px;
+        border-bottom-left-radius: 45px;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="shape cuadrado-cyan"></div>
+        <div class="shape cuadrado-magenta"></div>
+        <div class="shape cuadrado-amarillo"></div>
+    </div>
+</body>
+</html>
