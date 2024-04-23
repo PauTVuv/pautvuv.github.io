@@ -19,7 +19,7 @@ function init() {
 
     document.body.appendChild(renderer.domElement);
 
-    // Earth
+    // Tierra
     var earthTexture = new THREE.TextureLoader().load('./earthmap4k.jpg');
     var earthNormal = new THREE.TextureLoader().load('./earth_normalmap_flat4k.jpg');
     var earthMaterial = new THREE.MeshPhongMaterial({ map: earthTexture, normalMap: earthNormal });
@@ -28,15 +28,15 @@ function init() {
     earthMesh.name = 'earth';
     scene.add(earthMesh);
 
-    // Clouds
+    // Nuves
     var cloudsTexture = new THREE.TextureLoader().load('./fair_clouds_4k.png');
     var cloudsMaterial = new THREE.MeshPhongMaterial({ map: cloudsTexture, transparent: true });
     var cloudsGeometry = new THREE.SphereGeometry(1.01, 32, 32);
     cloudsMesh = new THREE.Mesh(cloudsGeometry, cloudsMaterial);
-    cloudsMesh.name = 'clouds'; // Corrected assignment here
+    cloudsMesh.name = 'clouds';
     scene.add(cloudsMesh);
 
-    // Light
+    // Luz
     var pointLight = new THREE.PointLight(0xffffff, 1);
     pointLight.position.set(5, 5, 5);
     scene.add(pointLight);
@@ -59,19 +59,19 @@ function render() {
     renderer.render(scene, camera);
 }
 
-// Modify rotation speed with arrow keys
+// Modificar la velocidad de rotación con las teclas de flecha
 document.addEventListener('keydown', function(event) {
     switch(event.keyCode) {
-        case 37: // left arrow
+        case 37: // flecha izquierda
             earthRotationSpeed -= 0.0001;
             break;
-        case 39: // right arrow
+        case 39: // flecha derecha
             earthRotationSpeed += 0.0001;
             break;
     }
 });
 
-// Raycaster for mouse click
+// Raycaster para hacer clic con el mouse y para la rotación
 document.addEventListener('mousedown', onMouseDown, false);
 
 function onMouseDown(event) {
